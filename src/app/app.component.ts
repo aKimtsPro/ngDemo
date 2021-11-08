@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ngDemo';
+  titleClass = 'red';
+  inputValue: string = '';
+
+  onClick(event: MouseEvent){
+    console.log(event);
+  }
+
 }
