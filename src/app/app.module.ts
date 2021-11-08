@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { QuotePipe } from './pipes/quote.pipe';
 import { AccueilComponent } from './components/accueil/accueil.component';
+import { ExercicesModule } from './exercices/exercices.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AccueilComponent } from './components/accueil/accueil.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ExercicesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

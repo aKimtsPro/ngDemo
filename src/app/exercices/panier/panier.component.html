@@ -1,0 +1,27 @@
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col-2">img</th>
+        <th scope="col-2">nom</th>
+        <th scope="col-2">desc</th>
+        <th scope="col-2">prix</th>
+        <th scope="col-2">qtt</th>
+        <th scope="col-2">action</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of items; let i=index" [hidden]="item.produit.qtt<=0">
+            <th class="col-2"><img [src]="item.produit.img" alt="img-{{item.produit.nom}}"></th>
+            <th><p class="col-2"> {{ item.produit.nom }} </p></th>
+            <th><p class="col-2"> {{ item.produit.desc == null ? '-' : item.produit.desc }} </p></th>
+            <th><p class="col-2" [ngClass]="{'good-deal': item.produit.prix < 10}" > {{ item.produit.prix | currency:'EUR'}} </p></th>
+            <th><p class="col-2" [ngClass]="{'high-qtt': item.produit.qtt >= 5, 'low-qtt': item.produit.qtt < 5} "> {{ item.produit.qtt }} </p></th>
+            <th class="col-2">
+                <input type="number" [max]="item.produit.qtt" [(ngModel)]="item.qttAVirer">
+                <button style="width: 100%;" class="btn btn-success" (click)="addToCart( i )">ajouter au panier</button>
+            </th>
+        </tr>
+    </tbody>
+  </table>
+

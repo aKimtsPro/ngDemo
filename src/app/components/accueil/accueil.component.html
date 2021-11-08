@@ -1,4 +1,8 @@
 
+<h2 [class]="titleClass"> {{ title | quote }} </h2>    
+<input type="text" [(ngModel)]="inputValue">
+<button class="btn btn-info" (click)="onClick($event)">alert me</button>
+
 <h2 [ngClass]="{ red: inputColor == 'red', blue: inputColor == 'blue', green: inputColor=='green', yellow: inputColor!='red' && inputColor!='green' && inputColor!='blue' }"> Presentation equipe </h2>
 
 <input type="text" [(ngModel)]="inputColor">
@@ -8,7 +12,7 @@
 
 <h2> ngIf </h2>
 
-<button (click)="onClick()" class="btn" [ngClass]="{'btn-info':!visible, 'btn-danger':visible}"> {{ visible ? 'cacher liste' : 'montrer liste' }} </button>
+<button (click)="toggleDisplay()" class="btn" [ngClass]="{'btn-info':!visible, 'btn-danger':visible}"> {{ visible ? 'cacher' : 'montrer' }} </button>
 
 <!-- <p *ngIf="visible">texte à cacher</p> -->
 <!-- <p [hidden]="!visible">texte à cacher</p> -->
@@ -23,15 +27,12 @@
         <div class="row" *ngSwitchCase="'#000000'">     
             <div class="col-3 rectangle"  [ngStyle]="{'background-color': hexaColor}"> </div>
         </div>
-        
         <div class="row" *ngSwitchCase="'#FF0000'">     
             <div class="col-3 offset-3 rectangle"  [ngStyle]="{'background-color': hexaColor}"> </div>
         </div>
-        
         <div class="row" *ngSwitchCase="'#00FF00'">     
             <div class="col-3 offset-6 rectangle"  [ngStyle]="{'background-color': hexaColor}"> </div>
         </div>
-        
         <div class="row" *ngSwitchCase="'#0000FF'">     
             <div class="col-3 offset-9 rectangle"  [ngStyle]="{'background-color': hexaColor}"> </div>
         </div>

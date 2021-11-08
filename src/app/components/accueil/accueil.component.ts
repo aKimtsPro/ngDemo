@@ -17,6 +17,13 @@ export class AccueilComponent implements OnInit {
   ]
   countColor = 0;
   visible = false;
+  title = 'ngDemo';
+  titleClass = 'red';
+  inputValue: string = '';
+
+  onClick(event: MouseEvent){
+    console.log(event);
+  }
 
   constructor() { }
 
@@ -31,7 +38,7 @@ export class AccueilComponent implements OnInit {
 
   }
 
-  onClick(){
+  toggleDisplay(){
      this.visible = !this.visible;
   }
 
