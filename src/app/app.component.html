@@ -1,23 +1,8 @@
 
-<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-  <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-    <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-    <span class="fs-4">Demo Angular</span>
-  </a>
-
-  <ul class="nav nav-pills">
-    <li class="nav-item"><a href="http://localhost:4200" class="nav-link" aria-current="page">Accueil</a></li>
-    <li class="nav-item dropdown">
-      <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-        exos
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-        <li><a href="http://localhost:4200/exo/root" class="nav-link">exo</a></li>
-        <li><a href="http://localhost:4200/exo/panier" class="nav-link">panier</a></li>
-      </ul>
-    </li>
-  </ul>
+<header>
+  <app-nav></app-nav>
 </header>
+
 <div class="container">
   <router-outlet></router-outlet>
 </div>

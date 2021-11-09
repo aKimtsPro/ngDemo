@@ -7,12 +7,20 @@ import { AppComponent } from './app.component';
 import { QuotePipe } from './pipes/quote.pipe';
 import { AccueilComponent } from './components/accueil/accueil.component';
 import { ExercicesModule } from './exercices/exercices.module';
+import { Page404Component } from './components/page404/page404.component';
+import { NavComponent } from './components/nav/nav.component';
+import { LoginComponent } from './components/login/login.component';
+import { ProfilComponent } from './components/profil/profil.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     QuotePipe,
-    AccueilComponent
+    AccueilComponent,
+    Page404Component,
+    NavComponent,
+    LoginComponent,
+    ProfilComponent
   ],
   imports: [
     BrowserModule,
