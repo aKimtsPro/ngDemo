@@ -13,11 +13,11 @@ export class NavComponent implements OnInit {
   }
 
   logout(){
+    alert('vous êtes déconnecté');
     sessionStorage.removeItem('connectedUser');
   }
 
   isConnected(){
-    alert('vous êtes déconnecté');
     return sessionStorage.getItem('connectedUser');
   }
 

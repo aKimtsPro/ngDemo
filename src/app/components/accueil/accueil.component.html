@@ -17,6 +17,7 @@
 <!-- <p *ngIf="visible">texte à cacher</p> -->
 <!-- <p [hidden]="!visible">texte à cacher</p> -->
 
+
 <div *ngIf="visible" class="container">
 
     <div class="row">     
@@ -38,5 +39,12 @@
         </div>
     </div>
 
+</div>
 
+<h2> route paramétrée</h2>
+
+
+<div class="input-group mb-3 container">
+  <input type="number" [(ngModel)]="nbrToCheck" class="form-control" placeholder="number to check" aria-describedby="button-addon2">
+  <button class="btn btn-outline-secondary" style="width: 30%;" routerLink="/check-even/{{nbrToCheck}}" type="button" id="button-addon2">check</button>
 </div>

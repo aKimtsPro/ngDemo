@@ -21,6 +21,8 @@ export class AccueilComponent implements OnInit {
   titleClass = 'red';
   inputValue: string = '';
 
+  nbrToCheck= 0;
+
   onClick(event: MouseEvent){
     console.log(event);
   }

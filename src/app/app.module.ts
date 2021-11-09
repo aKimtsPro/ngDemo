@@ -11,6 +11,7 @@ import { Page404Component } from './components/page404/page404.component';
 import { NavComponent } from './components/nav/nav.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProfilComponent } from './components/profil/profil.component';
+import { EvenOddComponent } from './components/even-odd/even-odd.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ProfilComponent } from './components/profil/profil.component';
     Page404Component,
     NavComponent,
     LoginComponent,
-    ProfilComponent
+    ProfilComponent,
+    EvenOddComponent
   ],
   imports: [
     BrowserModule,
