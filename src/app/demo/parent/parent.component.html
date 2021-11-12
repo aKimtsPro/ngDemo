@@ -1,0 +1,8 @@
+<h2>Communication parent/enfant</h2>
+
+
+<ul class="list-group" style="width: 500px;">
+    <li class="list-group-item pt-4" *ngFor="let pers of listPers">
+        <app-enfant [pers-to-display]="pers" couleur="goldenrod" (delete)="onDelete($event)"></app-enfant>
+    </li>
+</ul>

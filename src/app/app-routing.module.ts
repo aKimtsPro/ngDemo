@@ -9,7 +9,8 @@ import { LoggedGuard } from './guards/logged.guard';
 
 const routes: Routes = [
   { path: '', component: AccueilComponent},
-  { path:'exo', loadChildren: () => import('./exercices/exercices.module').then(m => m.ExercicesModule)},
+  { path: 'exo', loadChildren: () => import('./exercices/exercices.module').then(m => m.ExercicesModule)},
+  { path: 'demo', loadChildren: () => import('./demo/demo.module').then(m => m.DemoModule) },
   { path: 'login', component: LoginComponent },
   { path: 'profil', component: ProfilComponent, canActivate: [LoggedGuard] },
   { path: 'check-even/:nbr', component: EvenOddComponent },

@@ -14,10 +14,18 @@
         <a routerLink="/profil" class="nav-link"> votre profil </a>
       </li>
       <li class="nav-item dropdown">
-        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+        <button class="btn dropdown-toggle" type="button" id="demo-menu" data-bs-toggle="dropdown" aria-expanded="false">
+          demos
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="demo-menu">
+          <li><a routerLink="/demo/com" class="nav-link">communication</a></li>
+        </ul>
+      </li>
+      <li class="nav-item dropdown">
+        <button class="btn dropdown-toggle" type="button" id="exo-menu" data-bs-toggle="dropdown" aria-expanded="false">
           exos
         </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+        <ul class="dropdown-menu" aria-labelledby="exo-menu">
           <li><a routerLink="/exo/root" class="nav-link">exo</a></li>
           <li><a routerLink="/exo/panier" class="nav-link">panier</a></li>
         </ul>
