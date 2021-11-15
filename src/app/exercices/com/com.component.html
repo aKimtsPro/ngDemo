@@ -1,0 +1,11 @@
+<h2> Exo communication parent/enfant </h2>
+
+
+<div class="row">
+    <div class="col">
+        <app-permut [is-red]="leftIsRed" (switch)="switchColor()"></app-permut>
+    </div>
+    <div class="col">
+        <app-permut [is-red]="!leftIsRed" (switch)="switchColor()"></app-permut>
+    </div>
+</div>

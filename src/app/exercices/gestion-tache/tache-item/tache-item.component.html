@@ -1,0 +1,5 @@
+<div class="input-group mb-3">
+    <button class="btn btn-outline-success" type="button" [disabled]="isFirst" (click)="increasePrio()">monter la priorité</button>
+    <span class="form-control">  {{ tache }}   </span>
+    <button class="btn btn-outline-danger" type="button" [disabled]="isLast" (click)="decreasePrio()">descendre la priorité</button>
+  </div>

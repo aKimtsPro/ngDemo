@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SessionService } from 'src/app/services/session.service';
 
 @Component({
   selector: 'app-nav',
@@ -7,18 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
+  constructor( private _sessionService: SessionService ) { }
 
   ngOnInit(): void {
   }
 
   logout(){
     alert('vous êtes déconnecté');
-    sessionStorage.removeItem('connectedUser');
+    this._sessionService.logout();
   }
 
   isConnected(){
-    return sessionStorage.getItem('connectedUser');
+    return this._sessionService.isLogged();
   }
 
 }

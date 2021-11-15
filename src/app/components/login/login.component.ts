@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Credentials } from 'src/app/models/credentials.model';
+import { SessionService } from 'src/app/services/session.service';
 
 @Component({
   selector: 'app-login',
@@ -8,12 +10,12 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  formData = {
-    email: '',
+  formData: Credentials = {
+    username: '',
     password: ''
   }
 
-  constructor( private router: Router ) {
+  constructor( private _router: Router, private _sessionService: SessionService ) {
   }
 
   ngOnInit(): void {
@@ -21,16 +23,12 @@ export class LoginComponent implements OnInit {
 
   onSubmit(){
 
-    console.log(this.formData);
-
-    if( this.formData.email == "email" && this.formData.password == "pass" ) {
-      sessionStorage.setItem('connectedUser', this.formData.email);
+    if( this._sessionService.login( this.formData ) )
       // this.router.navigate(['exo', this.formData.email.length == 5 ? 'panier' : 'root']); // localhost:4200/exo/panier ou /exo/root
-      this.router.navigateByUrl('/exo/panier');
-    }
-    else {
+      this._router.navigateByUrl('/exo/panier');
+    else
       alert('identifiants invalides');
-    }
+    
   }
 
 }

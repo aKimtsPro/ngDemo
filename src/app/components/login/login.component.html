@@ -1,14 +1,13 @@
 
 <div>
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" [(ngModel)]="formData.email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    <label for="inputUsername" class="form-label">username</label>
+    <input type="text" [(ngModel)]="formData.username" class="form-control" id="inputUsername">
   </div>
 
   <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" [(ngModel)]="formData.password" class="form-control" id="exampleInputPassword1">
+    <label for="inputPassword" class="form-label">Password</label>
+    <input type="password" [(ngModel)]="formData.password" class="form-control" id="inputPassword">
   </div>
 
   <button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>

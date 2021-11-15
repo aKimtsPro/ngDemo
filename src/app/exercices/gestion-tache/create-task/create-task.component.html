@@ -1,0 +1,8 @@
+
+<h3> Créer une tâche </h3>
+
+<div class="input-group">
+    <input type="text" class="form-control" placeholder="qui a-t-il a faire" [(ngModel)]="toDo">
+    <button class="btn btn-outline-success" type="button" (click)="addToStart()">ajouter au debut</button>
+    <button class="btn btn-outline-info" type="button" (click)="addToEnd()">ajouter à la fin</button>
+</div>

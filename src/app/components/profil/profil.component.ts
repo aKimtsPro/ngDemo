@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SessionService } from 'src/app/services/session.service';
 
 @Component({
   selector: 'app-profil',
@@ -7,13 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfilComponent implements OnInit {
 
-  constructor() { }
+  constructor( private _sessionService: SessionService ) { }
 
   ngOnInit(): void {
   }
 
-  getEmail(){
-    return sessionStorage.getItem('connectedUser');
+  getUsername(){
+    return this._sessionService.getConnectedUser();
   }
 
 }

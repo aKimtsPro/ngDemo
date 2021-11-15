@@ -1,0 +1,11 @@
+<h2> Gestion de tâche avec priorité </h2>
+
+<app-create-task (add-to-start)="onAddToStart($event)" (add-to-end)="onAddToEnd($event)" ></app-create-task>
+
+<h3>Liste des tâches</h3>
+
+<ul>
+    <li *ngFor="let tache of listTache; let i=index">
+        <app-tache-item [tache]="tache" [is-first]="i == 0" [is-last]="i == listTache.length-1" (increase-prio)="increasePriority(i)" (decrease-prio)="decreasePriority(i)"></app-tache-item>    
+    </li>
+</ul>
