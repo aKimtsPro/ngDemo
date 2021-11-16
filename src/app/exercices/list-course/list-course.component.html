@@ -1,0 +1,13 @@
+
+<h2>Gestion de liste de course</h2>
+
+<h3>Ajouter à la liste</h3>
+<app-course-item-form></app-course-item-form>
+
+<h3>La liste</h3>
+
+<div>
+
+    <app-course-list-item *ngFor="let item of getList()" [item]="item"></app-course-list-item>
+
+</div>

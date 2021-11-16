@@ -3,17 +3,21 @@ import { CommonModule } from '@angular/common';
 import { ParentComponent } from './parent/parent.component';
 import { EnfantComponent } from './parent/enfant/enfant.component';
 import { DemoRoutingModule } from './demo-routing.module';
+import { SignupFormComponent } from './signup-form/signup-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
 @NgModule({
   declarations: [
     ParentComponent,
-    EnfantComponent
+    EnfantComponent,
+    SignupFormComponent
   ],
   imports: [
     CommonModule,
-    DemoRoutingModule
+    DemoRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class DemoModule { }

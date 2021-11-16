@@ -1,0 +1,18 @@
+
+<div class="row g-3 align-items-center">
+    <div class="col-auto">
+      <label for="inputProductName" class="col-form-label">nom : </label>
+    </div>
+    <div class="col-auto">
+      <input type="text" id="inputProductName" class="form-control" [(ngModel)]="toAdd.nom">
+    </div>
+    <div class="col-auto">
+        <label for="inputProductQtt" class="col-form-label">qtt : </label>
+    </div>
+    <div class="col-auto">
+        <input type="number" id="inputProductQtt" min="1" class="form-control" [(ngModel)]="toAdd.qtt">
+    </div>
+    <div class="col-auto">
+        <button class="btn btn-success" (click)="onAdd()">ajouter</button>
+    </div>
+</div>

@@ -9,6 +9,9 @@ import { PermutComponent } from './com/permut/permut.component';
 import { GestionTacheComponent } from './gestion-tache/gestion-tache.component';
 import { CreateTaskComponent } from './gestion-tache/create-task/create-task.component';
 import { TacheItemComponent } from './gestion-tache/tache-item/tache-item.component';
+import { ListCourseComponent } from './list-course/list-course.component';
+import { CourseItemFormComponent } from './list-course/course-item-form/course-item-form.component';
+import { CourseListItemComponent } from './list-course/course-list-item/course-list-item.component';
 
 
 
@@ -20,7 +23,10 @@ import { TacheItemComponent } from './gestion-tache/tache-item/tache-item.compon
     PermutComponent,
     GestionTacheComponent,
     CreateTaskComponent,
-    TacheItemComponent
+    TacheItemComponent,
+    ListCourseComponent,
+    CourseItemFormComponent,
+    CourseListItemComponent
   ],
   imports: [
     CommonModule,

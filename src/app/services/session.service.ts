@@ -1,13 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Credentials } from '../models/credentials.model';
+import { User } from '../models/user.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SessionService {
 
-  private readonly _correctUsername = "user";
-  private readonly _correctPassword = "pass"; 
+  private readonly _usersList : User[] = [
+    {
+      username: "user",
+      password: "pass"
+    }
+  ]
+
   private readonly _storageKey = "connectedUser";
 
   test = "salut";
@@ -16,7 +22,9 @@ export class SessionService {
 
   login( credentials: Credentials ): boolean {
     
-    if( credentials.username == this._correctUsername && credentials.password == this._correctPassword ){
+    const concernedUser = this._usersList.find( e => e.username == credentials.username);
+
+    if( concernedUser && credentials.password == concernedUser.password ){
       sessionStorage.setItem(this._storageKey, credentials.username);
       return true;
     }
@@ -38,9 +46,15 @@ export class SessionService {
   }
 
   getConnectedUser() {
-
     return sessionStorage.getItem(this._storageKey);
+  }
 
+  signup( toAdd: User ){
+
+    if( this._usersList.find(e => e.username == toAdd.username) )
+      throw 'this username is already taken';
+
+    this._usersList.push(toAdd);
   }
 
 }
