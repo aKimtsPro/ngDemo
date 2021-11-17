@@ -1,0 +1,26 @@
+<h2> Les observables </h2>
+
+<div class="row">
+    <div class="col-7">
+
+        <div class="mb-3">
+            <label for="new-text" class="form-label">ajouter du texte</label>
+            <input type="text" id="new-text" class="form-control" [(ngModel)]="newText">
+            <button class="btn btn-success" (click)="addText()">ajouter</button>
+        </div>
+
+        <app-new-text></app-new-text>
+
+        <button class="btn btn-info" (click)="connectToObs()">subscribe to updatedListObs</button>
+
+        <div>
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let text of listText; let i = index" (click)="remove(i)">{{i}} - {{ text }}</li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="col-5">
+        <img src="assets/img/obs-schem.png" alt="">
+    </div>
+</div>

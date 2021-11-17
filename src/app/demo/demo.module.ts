@@ -4,7 +4,9 @@ import { ParentComponent } from './parent/parent.component';
 import { EnfantComponent } from './parent/enfant/enfant.component';
 import { DemoRoutingModule } from './demo-routing.module';
 import { SignupFormComponent } from './signup-form/signup-form.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TextComponent } from './text/text.component';
+import { NewTextComponent } from './text/new-text/new-text.component';
 
 
 
@@ -12,12 +14,15 @@ import { ReactiveFormsModule } from '@angular/forms';
   declarations: [
     ParentComponent,
     EnfantComponent,
-    SignupFormComponent
+    SignupFormComponent,
+    TextComponent,
+    NewTextComponent
   ],
   imports: [
     CommonModule,
     DemoRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class DemoModule { }
