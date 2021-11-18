@@ -7,6 +7,7 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TextComponent } from './text/text.component';
 import { NewTextComponent } from './text/new-text/new-text.component';
+import { ApiRequestComponent } from './api-request/api-request.component';
 
 
 
@@ -16,7 +17,8 @@ import { NewTextComponent } from './text/new-text/new-text.component';
     EnfantComponent,
     SignupFormComponent,
     TextComponent,
-    NewTextComponent
+    NewTextComponent,
+    ApiRequestComponent
   ],
   imports: [
     CommonModule,

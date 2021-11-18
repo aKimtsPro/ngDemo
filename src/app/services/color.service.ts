@@ -12,7 +12,6 @@ export class ColorService {
   constructor() { }
 
   validateColor(color: string){
-  
     if( color.match("#[0-9a-fA-F]{6}" ) ){
       this._lastValidatedColor = color;
       this._colorChangedObs.next( color );

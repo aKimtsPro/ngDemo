@@ -12,6 +12,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProfilComponent } from './components/profil/profil.component';
 import { EvenOddComponent } from './components/even-odd/even-odd.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { EvenOddComponent } from './components/even-odd/even-odd.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ExercicesModule
+    ExercicesModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

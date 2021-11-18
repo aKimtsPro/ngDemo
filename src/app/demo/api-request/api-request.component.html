@@ -1,0 +1,60 @@
+
+<h2>Les requêtes HTTP</h2>
+
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+        <label for="input-name" class="form-label">name</label>
+        <input type="text" id="input-name" class="form-control" formControlName="name">
+    </div>
+
+    <div class="mb-3">
+        <label for="input-username" class="form-label">username</label>
+        <input type="text" id="input-username" class="form-control" formControlName="username">
+    </div>
+    
+    <div class="mb-3">
+        <label for="input-email" class="form-label">email</label>
+        <input type="email" id="input-email" class="form-control" formControlName="email">
+    </div>
+    
+    <div class="mb-3">
+        <label for="input-tel" class="form-label">tel</label>
+        <input type="text" id="input-tel" class="form-control" formControlName="tel">
+    </div>
+    
+    <div class="mb-3">
+        <label for="input-site" class="form-label">website</label>
+        <input type="text" id="input-site" class="form-control" formControlName="site">
+    </div>
+
+    <button class="btn btn-success" type="submit">envoyer</button>
+</form>
+
+<button class="btn btn-info" (click)="sendRequest()">reload users</button>
+<button class="btn btn-info" (click)="chamber()">reload chambre</button>
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-4" *ngFor="let u of listUser">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <h4>{{ u.name }}</h4>
+                </div>
+                <div class="card-body">
+
+                    <p><span>id : </span> {{ u.id }} </p>
+                    <p><span>username : </span> {{ u.username }} </p>
+                    <p><span>email : </span> {{ u.email }} </p>
+                    <p><span>tel : </span> {{ u.phone }} </p>
+                    <p><span>website : </span> {{ u.website }} </p>
+                  
+                </div>
+              </div>
+        </div>
+
+    </div>
+
+
+</div>
