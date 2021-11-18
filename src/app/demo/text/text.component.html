@@ -1,5 +1,7 @@
 <h2> Les observables </h2>
 
+<p>Voir text.component.ts, new-text.component.ts et text.service.ts pour le code </p>
+
 <div class="row">
     <div class="col-7">
 
@@ -11,7 +13,12 @@
 
         <app-new-text></app-new-text>
 
-        <button class="btn btn-info" (click)="connectToObs()">subscribe to updatedListObs</button>
+        <div>
+            <span *ngIf="subscription">cliquez sur un item pour le supprimer</span>
+            <button class="btn btn-danger" *ngIf="subscription" (click)="unsubToObs()">unsubscribe</button>
+            <button class="btn btn-info" *ngIf="!subscription" (click)="connectToObs()">subscribe</button>
+        </div>
+        
 
         <div>
             <ul class="list-group">

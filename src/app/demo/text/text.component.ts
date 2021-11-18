@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { TextService } from 'src/app/services/text.service';
 
 @Component({
@@ -10,6 +11,7 @@ export class TextComponent implements OnInit {
 
   newText = '';
   listText: string[] = [];
+  subscription: Subscription | null = null;
 
   constructor(private textService: TextService) { 
     
@@ -19,7 +21,12 @@ export class TextComponent implements OnInit {
   }
 
   connectToObs(){
-    this.textService.getUpdatedListObs().subscribe( (newList) => { console.log('okok');this.listText = newList } );
+    this.subscription = this.textService.getUpdatedListObs().subscribe( (newList) => { console.log('okok');this.listText = newList } );
+  }
+
+  unsubToObs(){
+    this.subscription?.unsubscribe();
+    this.subscription = null;
   }
 
   addText(){
@@ -28,7 +35,8 @@ export class TextComponent implements OnInit {
   }
 
   remove(index: number){
-    this.textService.remove(index);
+    if(this.subscription)
+      this.textService.remove(index);
   }
 
 }

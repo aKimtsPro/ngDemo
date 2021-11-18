@@ -6,13 +6,19 @@ import { PanierComponent } from './panier/panier.component';
 import { ComComponent } from './com/com.component';
 import { GestionTacheComponent } from './gestion-tache/gestion-tache.component';
 import { ListCourseComponent } from './list-course/list-course.component';
+import { ObsContComponent } from './obs-cont/obs-cont.component';
+import { InputCouleurComponent } from './obs-cont/input-couleur/input-couleur.component';
+import { CadreCouleurComponent } from './obs-cont/cadre-couleur/cadre-couleur.component';
 
 const routes: Routes = [
   { path: 'root', component: RootComponent},
   { path: 'panier', component: PanierComponent},
   { path: 'com1', component: ComComponent},
   { path: 'com2', component: GestionTacheComponent },
-  { path: 'services', component: ListCourseComponent}
+  { path: 'services', component: ListCourseComponent},
+  { path: 'obs', component: ObsContComponent},
+  { path: 'obs-cadre', component: CadreCouleurComponent},
+  { path: 'obs-input', component: InputCouleurComponent}
 ]
 
 @NgModule({

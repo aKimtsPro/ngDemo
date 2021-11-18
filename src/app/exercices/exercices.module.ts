@@ -12,6 +12,9 @@ import { TacheItemComponent } from './gestion-tache/tache-item/tache-item.compon
 import { ListCourseComponent } from './list-course/list-course.component';
 import { CourseItemFormComponent } from './list-course/course-item-form/course-item-form.component';
 import { CourseListItemComponent } from './list-course/course-list-item/course-list-item.component';
+import { ObsContComponent } from './obs-cont/obs-cont.component';
+import { CadreCouleurComponent } from './obs-cont/cadre-couleur/cadre-couleur.component';
+import { InputCouleurComponent } from './obs-cont/input-couleur/input-couleur.component';
 
 
 
@@ -26,7 +29,10 @@ import { CourseListItemComponent } from './list-course/course-list-item/course-l
     TacheItemComponent,
     ListCourseComponent,
     CourseItemFormComponent,
-    CourseListItemComponent
+    CourseListItemComponent,
+    ObsContComponent,
+    CadreCouleurComponent,
+    InputCouleurComponent
   ],
   imports: [
     CommonModule,
