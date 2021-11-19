@@ -19,9 +19,9 @@ export class AccueilComponent implements OnInit {
   visible = false;
   title = 'ngDemo';
   titleClass = 'red';
-  inputValue: string = '';
+  inputValue: string = "valeur de l'input";
 
-  nbrToCheck= 0;
+  lien = 'http://google.com'
 
   onClick(event: MouseEvent){
     console.log(event);
