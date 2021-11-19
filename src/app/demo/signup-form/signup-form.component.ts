@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, Form, FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { SessionService } from 'src/app/services/session.service';
+import { SessionService } from 'src/app/services/api_service/session.service';
 
 function pswdEqualsConfirm( control : AbstractControl ) : ValidationErrors | null {
   if( control.value.password == control.value.confirm )

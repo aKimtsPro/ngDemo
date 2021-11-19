@@ -1,0 +1,53 @@
+
+<h2>Les routes et ce qu'elles permettent</h2>
+
+<p>
+    Au dela de simplement séparer les différentes section, une série d'autre fonctionnalités peuvent
+    être utilisé via les routes.
+</p>
+
+<h3>Les routes enfants</h3>
+
+<p>
+    La définition de routes enfants permet de rassemble dans un chemin similaire différentes sections
+    portant sur un thème commun (exemple: exo, demo). <br/>
+    Pour définir une série de chemin enfant, on peut soit utiliser la propriété 'children' d'un chemin et définir les
+    enfant directement<br/>
+    Ou si les routes enfants sont défnies dans le ...-routing.module d'une autre module que le principal,
+    utiliser 'loadChildren'. <br/>
+</p>
+<p>
+    Si on défini des routes enfants dans un module autre que le principale, le ...-routing.module.ts importera
+    RouterModule.forChild(mes_routes_enfants) plutot que RouterModule.forRoot(mes_routes_racines) (voir différence en app-routing.module.ts et demo-routing.module.ts)
+</p>
+
+<h3>Les routes paramétrées</h3>
+
+<p> 
+    Il est aussi possible de paramétrer les différentes routes accèssible donnant accès au composant lié
+    à une route paramètrée de récupérer la valeur du paramètre grâce à ActivatedRoute. <br>
+    C'est par exemple le cas pour EvenOddComponent (voir components/even-odd.component.ts)
+</p>
+
+<div class="input-group mb-3 container">
+    <input type="number" [(ngModel)]="nbrToCheck" class="form-control" placeholder="number to check" aria-describedby="button-addon2">
+    <button class="btn btn-outline-secondary" style="width: 30%;" routerLink="/check-even/{{nbrToCheck}}" type="button" id="button-addon2">lien paramétré vers EvenOdd</button>
+</div>
+
+<h3>Les routes gardées</h3>
+
+<p>Il est possible de limiter l'accès a certaines sections du site selon certain conditions définies par des 'guards' (ng g g nom_guard)</p>
+<p>Les guards limite l'utilisation des différentes utilisation des chemin de faon suivante:</p>
+
+<dl>
+    <dt>CanActivate</dt>
+    <dd>Permet de limiter l'accès au chemin</dd>
+    <dt>CanDeactivate</dt>
+    <dd>Permet d'empêcher de quitter le chemin</dd>
+    <dt>CanLoad</dt>
+    <dd>Permet d'empeche le chargement du composant lié au chemin</dd>
+    <dt>CanActivateChild</dt>
+    <dd>Permet d'empecher d'accéder aux chemins enfants(à limiter aux chemins parents)</dd>
+</dl>
+
+<p>Exemple de guard: le LoggedGuard (voir guards/logged.guard.ts) permet d'empecher l'accès au chemin '/profil' (voir app-routing.module.ts) si l'utilisateur n'est pas connecté </p>

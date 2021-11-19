@@ -5,10 +5,12 @@ import { EvenOddComponent } from './components/even-odd/even-odd.component';
 import { LoginComponent } from './components/login/login.component';
 import { Page404Component } from './components/page404/page404.component';
 import { ProfilComponent } from './components/profil/profil.component';
+import { RoutingComponent } from './components/routing/routing.component';
 import { LoggedGuard } from './guards/logged.guard';
 
 const routes: Routes = [
   { path: '', component: AccueilComponent},
+  { path: 'routing', component: RoutingComponent},
   { path: 'exo', loadChildren: () => import('./exercices/exercices.module').then(m => m.ExercicesModule)},
   { path: 'demo', loadChildren: () => import('./demo/demo.module').then(m => m.DemoModule) },
   { path: 'login', component: LoginComponent },
@@ -19,7 +21,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes)], // parce que c'est le principal, on y décrit les routes racines
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

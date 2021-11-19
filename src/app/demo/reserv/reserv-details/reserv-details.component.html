@@ -1,0 +1,11 @@
+
+<h2>Detail de la réservation {{reserv.id}}</h2>
+
+<div>
+    <p><span>id:</span> {{reserv.id}}</p>
+    <p><span>checkin:</span> {{reserv.checkin | date}}</p>
+    <p><span>checkout:</span> {{reserv.checkout | date}}</p>
+    <p><span>breakfast:</span> {{reserv.breakfastIncluded ? 'inclu' : 'pas inclu'}}</p>
+    <p><span>username client:</span> {{reserv.client.username}}</p>
+    <p><span>num chambre:</span> {{reserv.chambre.numeroChambre}}</p>
+</div>

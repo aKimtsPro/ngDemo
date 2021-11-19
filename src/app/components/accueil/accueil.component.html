@@ -1,17 +1,80 @@
 
-<h2 [class]="titleClass"> {{ title | quote }} </h2>    
+<h2 [class]="titleClass"> {{ title | quote }} </h2>
+
+<h3>Le binding</h3>
+<h4>OneWay</h4>
+
+<p>Via le binding OneWay j'utilise les données de ma classe pour qu'elles impactent le template</p>
+<p>par exemple la variable 'inputValue' de la classe :<span class="red"> {{ inputValue }}</span></p>
+
+<p>Le binding d'attribut peut donner une valeur TS provenant de la classe à un attribut </p>
+<a [href]="lien"> Le href prendre la valeur de la variable 'lien' de la classe </a>
+
+<h4>TwoWay</h4>
+
+<p>Le binding 2Way permet de faire un lien direct entre un input et une variable de la classe</p>
+<p>Lorsque la valeur change d'un coté, elle sera aussi changée de l'autre coté</p>
+<p>ATTENTION: pour pouvoir utiliser [(ngModel)], il est nécessaire d'importer FormsModule ds le module qui déclare le composent qui l'utilise (dans ce cas, voir AppModule)</p>
 <input type="text" [(ngModel)]="inputValue">
+
+<h4>Event binding</h4>
+
+<p>
+    On peut réagir aux différents event HTML prédéfini et aux evenement défini par @Output en mettant le 
+    nom de l'évenement en parenthèse et lui associant une methode définie dans la classe
+</p>
+<p>
+    Tout évenement peut contenir des données récupérable grâce au mot clef '$event'
+</p>
 <button class="btn btn-info" (click)="onClick($event)">alert me</button>
 
-<h2 [ngClass]="{ red: inputColor == 'red', blue: inputColor == 'blue', green: inputColor=='green', yellow: inputColor!='red' && inputColor!='green' && inputColor!='blue' }"> Presentation equipe </h2>
+
+<h2>Les pipes</h2>
+<p>
+    Les permettent de transformer directement dans le template une données à utiliser en autre chose.
+    Le resultat et ce qui peut être transformer diffère selon le pipe utilisé
+</p>
+<p>
+    Par exemple, je veux afficher en majuscule la valeur de 'inputValue', je peux alors tuiliser le pipe 'uppercase':<span class="red"> {{ inputValue | uppercase }} </span>
+</p>
+<p>
+    Il est aussi possible de créer ses propres pipes ('ng g p mon_pipe'), on doit alors définir le comportement d'une méthode 'transform(value:any, ...args: any[]): any'.
+    Le custom pipe 'quote' par exemple permet de mettre une chaine de caractère entre guillemets: <span class="red">{{ inputValue | quote }}</span> 
+</p>
+
+<h2>Les directives</h2>
+
+<h3>Les directives attributs</h3>
+
+<p>
+    Les directives d'attributs permettent d'avoir pour les éléments html qui les utilisent, affiche différent (ex: ngClass, ngStyle) ou 
+    une fonctionnalité définie par la directive en question (ex: il est possible de créer une directive qui mettre en évidence l'élément 
+    qui l'utilise si on le survole)
+    <a href="https://angular.io/guide/attribute-directives">lien vers la directive en question</a>
+</p>
+
+<h4 [ngClass]="{ red: inputColor == 'red', blue: inputColor == 'blue', green: inputColor=='green', yellow: inputColor!='red' && inputColor!='green' && inputColor!='blue' }"> ngClass </h4>
+<p>
+    Donne une/des classe.s css conditionnelles selon la valeur d'une expression booleenne associé au nom de la classe. 
+</p>
 
 <input type="text" [(ngModel)]="inputColor">
 
-<p [ngStyle]="{ color: hexaColor }">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt placeat quos laudantium aliquid iure, ullam fugiat quae aspernatur dolore adipisci, minima consequuntur! Neque tenetur quam atque, nam eveniet non amet dolore? Tenetur est laborum voluptatem unde aliquam delectus optio magni.</p>
+<h4 [ngStyle]="{ color: hexaColor }">ngStyle</h4>
+<p>
+    Permet de donner des valeurs provenant de la classe TS du composant à des propriétés css de l'élément.
+</p>
 
 
-<h2> ngIf </h2>
+<h3> Les directives structurelles </h3>
 
+<p>
+    Les directives structurelles viendront modifier la structure même de notre code html.
+    On peut en reconnaitre certaines grâce au '*' devant leur nom (ex: ngIf, ngFor)
+</p>
+
+
+<h4>ngIf</h4>
 <button (click)="toggleDisplay()" class="btn" [ngClass]="{'btn-info':!visible, 'btn-danger':visible}"> {{ visible ? 'cacher' : 'montrer' }} </button>
 
 <!-- <p *ngIf="visible">texte à cacher</p> -->
@@ -20,10 +83,12 @@
 
 <div *ngIf="visible" class="container">
 
-    <div class="row">     
+    <div class="row">  
+        <h4>ngFor</h4>   
         <div class="col-3 rectangle" *ngFor="let color of colors; let i=index" [ngStyle]="{'background-color': color}"> {{ i }} </div>
     </div>
 
+    <h4>ngSwitch / ngSwitchCase</h4>
     <div [ngSwitch]="hexaColor">
         <div class="row" *ngSwitchCase="'#000000'">     
             <div class="col-3 rectangle"  [ngStyle]="{'background-color': hexaColor}"> </div>
@@ -41,10 +106,18 @@
 
 </div>
 
-<h2> route paramétrée</h2>
+<h2> Le routage </h2>
 
+<p>
+    Malgré le fait qu'on code un SPA, il s'agit pas d'afficher l'integralité des infos d'un coup.
+    Afin d'avoir un site fluide/agrèable à visiter, il est nécessaire de le subdiviser en section.
+    Le routage nous permettra d'accéder séparement à chacune de ces sections.
+</p>
+<p>
+    Les différentes routes seront définie des les '...-routing.module.ts' (voir app-routing.module.ts, demo-routing.module.ts et exo-routing.module.ts) et pour accèder au différentes sections sans recharger la page,
+    on peut utiliser des lien possèdant la directive 'routerLink' avec comme valeur le chemin associé au composant que l'on veut visiter.
+</p>
+<a routerLink="/routing" >vers la section parlant plus précisément du routing</a>
 
-<div class="input-group mb-3 container">
-  <input type="number" [(ngModel)]="nbrToCheck" class="form-control" placeholder="number to check" aria-describedby="button-addon2">
-  <button class="btn btn-outline-secondary" style="width: 30%;" routerLink="/check-even/{{nbrToCheck}}" type="button" id="button-addon2">check</button>
-</div>
+<div class="mb-5"></div>
+

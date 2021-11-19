@@ -9,16 +9,18 @@ import { ListCourseComponent } from './list-course/list-course.component';
 import { ObsContComponent } from './obs-cont/obs-cont.component';
 import { InputCouleurComponent } from './obs-cont/input-couleur/input-couleur.component';
 import { CadreCouleurComponent } from './obs-cont/cadre-couleur/cadre-couleur.component';
+import { GestChambreComponent } from './gest-chambre/gest-chambre.component';
 
 const routes: Routes = [
   { path: 'root', component: RootComponent},
   { path: 'panier', component: PanierComponent},
   { path: 'com1', component: ComComponent},
   { path: 'com2', component: GestionTacheComponent },
-  { path: 'services', component: ListCourseComponent},
-  { path: 'obs', component: ObsContComponent},
-  { path: 'obs-cadre', component: CadreCouleurComponent},
-  { path: 'obs-input', component: InputCouleurComponent}
+  { path: 'services', component: ListCourseComponent },
+  { path: 'obs', component: ObsContComponent },
+  { path: 'obs-cadre', component: CadreCouleurComponent },
+  { path: 'obs-input', component: InputCouleurComponent },
+  { path: 'request', component: GestChambreComponent }
 ]
 
 @NgModule({

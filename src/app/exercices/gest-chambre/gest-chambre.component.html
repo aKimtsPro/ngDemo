@@ -1,0 +1,66 @@
+<h2> Requete à une API REST </h2>
+
+<h3>Ajouter chambre</h3>
+<form>
+
+</form>
+
+<h3>Lister chambres</h3>
+
+<div class="row">
+
+    <div class="col-md-7">
+        <ul>
+            <li *ngFor="let chambre of listChambre">
+                <div class="card">
+                    <div class="room-card">
+                        <p><span class="room-detail-title">numéro : </span> {{ chambre.numeroChambre }} </p>
+                        <p><span class="room-detail-title">nombre de place : </span> {{ chambre.nbrPlaces }} </p>
+                        <p><span class="room-detail-title">type de chambre : </span> {{ chambre.type }} </p>
+                        <p><span class="room-detail-title">prix : </span> {{ chambre.prix | currency:'EUR' }} </p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-5">
+        <form class="card" [formGroup]="chambreFormGroup" (ngSubmit)="onSubmit()">
+            <div class="card-header">
+                <h3>Ajouter une chambre</h3>
+            </div>
+            <div class="card-body">
+
+                <div class="mb-3">
+                    <label for="input-num-chambre" class="form-label">num chambre</label>
+                    <input type="number" class="form-control" id="input-num-chambre" formControlName="numero">
+                </div>
+
+                
+                <div class="mb-3">
+                    <label for="input-nbr-places" class="form-label">nbr places</label>
+                    <input type="number" class="form-control" id="input-nbr-places" formControlName="nbrPlaces">
+                </div>
+
+                
+                <div class="mb-3">
+                    <label for="input-type" class="form-label">type de chambre</label>
+                    <select id="input-type" class="custom-select" formControlName="type">
+                        <option value="SUITE">suite</option>
+                        <option value="PENTHOUSE">penthouse</option>
+                        <option value="BASIC">basic</option>
+                    </select>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="input-prix" class="form-label">prix</label>
+                    <input type="number" class="form-control" id="input-prix" formControlName="prix">
+                </div>
+
+            </div>
+            <div class="card-footer">
+                <button type="submit" class="btn btn-success">envoyer</button>
+            </div>
+        </form>
+    </div>
+</div>
+

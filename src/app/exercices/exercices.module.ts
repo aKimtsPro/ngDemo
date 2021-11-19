@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RootComponent } from './root/root.component';
 import { ExoRoutingModule } from './exo-routing.module';
 import { PanierComponent } from './panier/panier.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ComComponent } from './com/com.component';
 import { PermutComponent } from './com/permut/permut.component';
 import { GestionTacheComponent } from './gestion-tache/gestion-tache.component';
@@ -15,6 +15,7 @@ import { CourseListItemComponent } from './list-course/course-list-item/course-l
 import { ObsContComponent } from './obs-cont/obs-cont.component';
 import { CadreCouleurComponent } from './obs-cont/cadre-couleur/cadre-couleur.component';
 import { InputCouleurComponent } from './obs-cont/input-couleur/input-couleur.component';
+import { GestChambreComponent } from './gest-chambre/gest-chambre.component';
 
 
 
@@ -32,12 +33,14 @@ import { InputCouleurComponent } from './obs-cont/input-couleur/input-couleur.co
     CourseListItemComponent,
     ObsContComponent,
     CadreCouleurComponent,
-    InputCouleurComponent
+    InputCouleurComponent,
+    GestChambreComponent
   ],
   imports: [
     CommonModule,
     ExoRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     RootComponent

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, FormsModule, Validators } from '@angular/forms';
-import { ChambreService } from 'src/app/services/chambre.service';
+import { ChambreService } from 'src/app/services/api_service/chambre.service';
 import { UserService } from 'src/app/services/user.service';
 import { ApiUser } from '../models/api-user.model';
 

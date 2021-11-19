@@ -8,6 +8,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TextComponent } from './text/text.component';
 import { NewTextComponent } from './text/new-text/new-text.component';
 import { ApiRequestComponent } from './api-request/api-request.component';
+import { SecuredRequestFormComponent } from './secured-request-form/secured-request-form.component';
+import { ReservDetailsComponent } from './reserv/reserv-details/reserv-details.component';
 
 
 
@@ -18,7 +20,9 @@ import { ApiRequestComponent } from './api-request/api-request.component';
     SignupFormComponent,
     TextComponent,
     NewTextComponent,
-    ApiRequestComponent
+    ApiRequestComponent,
+    SecuredRequestFormComponent,
+    ReservDetailsComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,34 @@
+<h2>Demander une réservation</h2>
+
+<form [formGroup]="reservForm" (ngSubmit)="onSubmit()">
+
+    <div class="mb-3">
+        <label for="" class="form-label">Type de chambre</label>
+        <select id="" class="form-control" formControlName="chambre">
+            <option value="SUITE">suite</option>
+            <option value="PENTHOUSE">penthouse</option>
+            <option value="BASIC">basic</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">check in</label>
+        <input type="date" class="form-control" formControlName="checkin">
+        <p class="form-text" *ngIf="datesInvalid">Date invalide</p>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">checkout</label>
+        <input type="date" class="form-control" formControlName="checkout">
+        <p class="form-text"*ngIf="datesInvalid">Date invalide</p>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">nombre de personne</label>
+        <input type="number" class="form-control" formControlName="nbrPers">
+    </div>
+    <div class="mb-3">
+        <input type="checkbox" class="form-check-input"  formControlName="breakfastIncluded">
+        <label for="" class="form-label">breakfast</label>
+    </div>
+
+    <button type="submit" class="btn btn-success">envoyer</button>
+
+</form>
