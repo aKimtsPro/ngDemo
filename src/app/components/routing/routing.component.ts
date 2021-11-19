@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-routing',
@@ -9,9 +10,14 @@ export class RoutingComponent implements OnInit {
 
   nbrToCheck= 0;
 
-  constructor() { }
+  constructor(private _router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  navigate(){
+    // this._router.navigateByUrl('check-even/'+9);
+    this._router.navigate(['check-even', 9]);
   }
 
 }

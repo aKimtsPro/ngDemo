@@ -10,6 +10,7 @@ import { NewTextComponent } from './text/new-text/new-text.component';
 import { ApiRequestComponent } from './api-request/api-request.component';
 import { SecuredRequestFormComponent } from './secured-request-form/secured-request-form.component';
 import { ReservDetailsComponent } from './reserv/reserv-details/reserv-details.component';
+import { ServiceComponent } from './service/service.component';
 
 
 
@@ -22,7 +23,8 @@ import { ReservDetailsComponent } from './reserv/reserv-details/reserv-details.c
     NewTextComponent,
     ApiRequestComponent,
     SecuredRequestFormComponent,
-    ReservDetailsComponent
+    ReservDetailsComponent,
+    ServiceComponent
   ],
   imports: [
     CommonModule,

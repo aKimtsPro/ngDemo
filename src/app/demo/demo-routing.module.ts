@@ -7,6 +7,7 @@ import { TextComponent } from './text/text.component';
 import { ApiRequestComponent } from './api-request/api-request.component';
 import { SecuredRequestFormComponent } from './secured-request-form/secured-request-form.component';
 import { ReservDetailsComponent } from './reserv/reserv-details/reserv-details.component';
+import { ServiceComponent } from './service/service.component';
 
 const routes: Routes = [
     { path:'com', component: ParentComponent },
@@ -14,7 +15,8 @@ const routes: Routes = [
     { path: 'obs', component: TextComponent },
     { path: 'http', component: ApiRequestComponent},
     { path: 'secured-http', component: SecuredRequestFormComponent },
-    { path: 'reserv-detail/:id', component: ReservDetailsComponent }
+    { path: 'reserv-detail/:id', component: ReservDetailsComponent },
+    { path: 'service', component: ServiceComponent}
 ]
 
 @NgModule({

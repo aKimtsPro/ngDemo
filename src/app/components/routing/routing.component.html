@@ -3,8 +3,25 @@
 
 <p>
     Au dela de simplement séparer les différentes section, une série d'autre fonctionnalités peuvent
-    être utilisé via les routes.
+    être utilisé via les routes. <br>
+    Les components liés à route activée seront chargé en dessous d'un balise 'router-outlet' unique dans notre appli (sauf si géré) 
+    puis déchargé lorsqu'on change de route activée. Dans cet application le 'router-outlet' se trouve ans le composant 'app-root' (voir 'app.component.html')
+    
 </p>
+
+
+<h3>Accéder aux différentes routes</h3>
+
+<p>
+    Pour accéder aux différentes sections de notre site, deux moyens :
+</p>
+
+<dl>
+    <dt>'routerLink'</dt>
+    <dd routerLink="/check-even/9">On peut utiliser la directive 'routerLink' sur différents éléments afin devient un lien vers la section ciblée du site. (cliquer pour essayer vers 'check-even/9')</dd>
+    <dt>Router</dt>
+    <dd (click)="navigate()">On peut aussi demander un changement de section dans les classes d'éléments angular en injectant la dépendance à un objet Router. Dès lors on a accès au éthodes navigateByUrl et navigate(cliquer pour essayer vers 'check-even/9')</dd>
+</dl>
 
 <h3>Les routes enfants</h3>
 
@@ -51,3 +68,5 @@
 </dl>
 
 <p>Exemple de guard: le LoggedGuard (voir guards/logged.guard.ts) permet d'empecher l'accès au chemin '/profil' (voir app-routing.module.ts) si l'utilisateur n'est pas connecté </p>
+
+<a routerLink="/demo/com">lien vers la communication parent/enfant</a>

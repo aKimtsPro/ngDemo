@@ -1,8 +1,55 @@
 <h2>Communication parent/enfant</h2>
 
+<p>
+    Il est possible de faire passer des infos d'un composant parent (conteneur) à un composant enfant (contenu)
+     et inversément grâce à la défnition d'@Input() et @Output() dans l'enfant (voir 'demo/parent/enfant.component.ts').
+    Ce type de communication ne passe pas à travers du 'router-outlet'
+</p>
+
+<h3>Les @Input</h3>
+<p>
+    On peut définir un/plusieurs variable.s annotée.s du décorateur input dans un composant afin de créer un nouvel
+    attribut lié à la balise de composant. Grâce à cet attribut on peut faire passer des info du parent -> enfant en donnant une valeur à cet attribut 
+    donnée qui donnera sa valeur à la variable liée dans l'enfant. (voir 'demo/parent/enfant.component.ts'). <br>
+    Par défaut l'attribut prend le nom de la variable mais il est possible de changer e nm de l'attribut le donnant en 
+    paramètre de @Input('nom_attribut').
+</p>
+
+
+<h3>Les @Output</h3>
+<p>
+    Il est aussi possible d'utiliser @Output() pour créer des évenements custom utilisable par le parent du composant qui en déclare. <br>
+    L'évenement(comme tout événement) pour charier une info d'un certain type choisi à chaque trigger. Il sera alors possible pour le parent
+    de choisir comment réagir au trigger (comme pour tout événement) et ce qu'il faut faire de la donnée charié (accéssible via '$event' comme pour tout événement).
+</p>
+<h4>Pour mettre en place un @Output dans un component:</h4>
+
+<ol>
+    <li>Créer une 'machine à trigger' (un EventEmitter)</li>
+    <li>Choisir le type de donnée émise à chaque trigger (EventEmitter{{'<'}}TypeDonnée{{'>'}})</li>
+    <li>En faire un événement utilisable en l'annotant de @Output</li>
+    <li>Choisir quand/quoi émettre grâce à la méthode 'emit' de l'EventEmitter</li>
+</ol>
+
+<p>
+    ATTENTION à prendre le bon EventEmitter (@angular/core). <br>
+    Par défaut le nom de l'événement est le nom de l'EventEmitter mais il est possible d'en changer 
+    en donnant le nom voulu en paramètre de @Output('nom_event').
+</p>
+
+<h3>Exemple : </h3>
+
+<p>
+    On a un enfant pour chaque personne de listPers.
+    A chaque enfant je donne une personne à afficher.
+    Chaque enfant possède un événement 'delete' qui se déclenche lorsqu'on clique sur le bouton rouge.
+    Le parent y réagi en supprimant la personne chariée (onDelete($event)) par l'événement de listPers (ce qui supprime l'enfant associé).
+</p>
 
 <ul class="list-group" style="width: 500px;">
     <li class="list-group-item pt-4" *ngFor="let pers of listPers">
         <app-enfant [pers-to-display]="pers" couleur="goldenrod" (delete)="onDelete($event)"></app-enfant>
     </li>
 </ul>
+
+<a routerLink="/demo/signup">lien vers la gestion de forrmulaire</a>

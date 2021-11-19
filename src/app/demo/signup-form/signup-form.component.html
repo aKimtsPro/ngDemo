@@ -1,4 +1,67 @@
 
+<h2>La gestion plus approfondie des forrmulaire</h2>
+
+<p>
+    Pour gérer les formulaires plus complexe, on se détourne de [(ngModel)] et donc du FormsModule
+    pour se diriger vers les FormGroup et ReactiveFormsModule. <br>
+    Ceux-ci nous permettent une meilleure intéraction entre angular et les formulaires. <br>
+    Pour pouvoir utiliser ceux-ci, il est nécessaire d'importer ReactiveFormsModule de le module qui 
+    défini le component du formulaire.
+</p>
+
+<h3>Mise en place basique</h3>
+<p>
+    Pour mettre en place un formulaire bien gérer, plusieures étapes:
+</p>
+<ol>
+    <li>Importer ReactiveFormsModule</li>
+    <li>Créer le formulaire HTML dans le template</li>
+    <li>
+        Créer un FormGroup. Ceci est possible via le constructeur de FormGroup ou en utilisant la méthode 'group(...)' d'un FormBuilder injecté (voir demo/signup-form.component.ts | demo/secured-request-form.component.ts).
+        La création du FormGroup implique le regroupement d'une série de FormControl chacun associé à un nom.     
+    </li>
+    <li>Lier la balise form au FormGroup via la balise [formGroup]</li>
+    <li>Lier les inputs du form à un FormControl grâce à formControlName="nom_du_control" </li>
+    <li>On décide de quoi faire lors de la soumission du formulaire grâce à l'événement (ngSubmit)</li>
+</ol>
+
+<h3>Structure du FormGroup</h3>
+<p>
+    Un FormGroup(comme le FormControl) est un enfant d' <a href="https://angular.io/api/forms/AbstractControl">AbstractControl</a> .
+    Parmi les attributs intéressant d'un FormGroup:
+</p>
+<ul>
+    <li>
+        value: donne la valeur de chaque input (chaque valeur associé au nom du FormControl lié)
+    </li>
+    <li>
+        controls: tableau associatif qui associe les FormControl à leur nom
+    </li>
+    <li>
+        Les 3 paires de booleens donnant des infos utiles à l'affichage et au traitement des données:
+        <ul>
+            <li> dirty / pristine : un des champs a été modifié (ou pas) (le champ si FormControl) </li>
+            <li> touched / untouched : on a cliqué dans un des champs (ou pas) (le champ si FormControl)  </li>
+            <li> invalid / valid : un des champs est invalide (selon les validateur associés) (ou pas) (le champ si FormControl) </li>
+        </ul>
+        Chaque paire donne lieu à une classe css liée. (ng-invalid, ng-touched, ng-dirty, ...)
+    </li>
+    <li>
+        errors: donne les erreurs de validation s'il y en a
+    </li>
+</ul>
+
+<h3>La validation</h3>
+<p>
+    Il est possible de gérer la validation du formulaire en définissant des contraintes de validation
+    au niveau de chaque FormControl( 2e param du constructeur ) ou au niveau du FormGroup (2e param du constructeur ou de la méthde 'group(...)' 
+    en fornissant un/plusieurs <a href="https://angular.io/api/forms/ValidatorFn">ValidatorFn</a> qu'ils soient prédéfini (il y en a dans la classe 
+    <a href="https://angular.io/api/forms/Validators">Validators</a>) ou custom (par exemple 'pswdEqualsConfirm') (voir 'demo/signup-form.component.ts')) <br>
+    Les ValidatorFn se charge de vérifier et la contrainte est valide (retroune 'null') et si ce n'est pas le cas fournissent une erreur (de type <a href="https://angular.io/api/forms/ValidationErrors">ValidationErrors</a> )
+    ce qui impacte de la paire de booleen valid/invalid du FormGroup/FormControl
+</p>
+
+
 <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
     <div class="mb-3">
         <label for="inputSignupUsername" class="form-label">Username</label>
