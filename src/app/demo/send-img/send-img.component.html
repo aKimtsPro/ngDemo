@@ -1,0 +1,22 @@
+<div>
+
+    <div *ngIf="imgPreview">
+        <img [src]="imgPreview" style="width: 200px;">
+    </div>
+
+    <div>
+        <label for="">nom de la ville</label>
+        <input type="text" [(ngModel)]="nomVille">
+    </div>
+
+    <div class="input-group">
+        <label for="input-file">choisir un fichier à envoyer</label>
+        <input type="file" id="input-file" (change)="onChange($event)">
+    </div>
+
+    <button type="submit" class="btn btn-success" (click)="onSend()">envoyer</button>
+    <button type="submit" class="btn btn-success" (click)="onInsert()">inserer</button>
+    <button type="submit" class="btn btn-success" (click)="onInsertViaLink()">inserer via lien</button>
+
+</div>
+

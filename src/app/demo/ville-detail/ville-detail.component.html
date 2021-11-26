@@ -1,0 +1,5 @@
+<p *ngIf="!ville">loading...</p>
+<div *ngIf="ville">
+    <img [src]="villeImg">
+    <p>{{ ville.nom }}</p>
+</div>

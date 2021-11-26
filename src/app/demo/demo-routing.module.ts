@@ -8,6 +8,8 @@ import { ApiRequestComponent } from './api-request/api-request.component';
 import { SecuredRequestFormComponent } from './secured-request-form/secured-request-form.component';
 import { ReservDetailsComponent } from './reserv/reserv-details/reserv-details.component';
 import { ServiceComponent } from './service/service.component';
+import { SendImgComponent } from './send-img/send-img.component';
+import { VilleDetailComponent } from './ville-detail/ville-detail.component';
 
 const routes: Routes = [
     { path:'com', component: ParentComponent },
@@ -16,7 +18,9 @@ const routes: Routes = [
     { path: 'http', component: ApiRequestComponent},
     { path: 'secured-http', component: SecuredRequestFormComponent },
     { path: 'reserv-detail/:id', component: ReservDetailsComponent },
-    { path: 'service', component: ServiceComponent}
+    { path: 'service', component: ServiceComponent},
+    { path: 'send', component: SendImgComponent},
+    { path: 'ville/:id', component: VilleDetailComponent }
 ]
 
 @NgModule({

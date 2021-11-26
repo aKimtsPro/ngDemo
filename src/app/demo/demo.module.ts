@@ -11,6 +11,8 @@ import { ApiRequestComponent } from './api-request/api-request.component';
 import { SecuredRequestFormComponent } from './secured-request-form/secured-request-form.component';
 import { ReservDetailsComponent } from './reserv/reserv-details/reserv-details.component';
 import { ServiceComponent } from './service/service.component';
+import { SendImgComponent } from './send-img/send-img.component';
+import { VilleDetailComponent } from './ville-detail/ville-detail.component';
 
 
 
@@ -24,7 +26,9 @@ import { ServiceComponent } from './service/service.component';
     ApiRequestComponent,
     SecuredRequestFormComponent,
     ReservDetailsComponent,
-    ServiceComponent
+    ServiceComponent,
+    SendImgComponent,
+    VilleDetailComponent
   ],
   imports: [
     CommonModule,
